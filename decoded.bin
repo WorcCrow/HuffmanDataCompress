@@ -1,0 +1,17 @@
+The actual size of the integer types varies by implementation. The standard requires only size relations between the data types and minimum sizes for each data type:
+
+The relation requirements are that the long long is not smaller than long, which is not smaller than int, which is not smaller than short. As char's size is always the minimum supported data type, no other data types (except bit-fields) can be smaller.
+
+The minimum size for char is 8 bits, the minimum size for short and int is 16 bits, for long it is 32 bits and long long must contain at least 64 bits.
+
+The type int should be the integer type that the target processor is most efficiently working with. This allows great flexibility: for example, all types can be 64-bit. However, several different integer width schemes (data models) are popular. Because the data model defines how different programs communicate, a uniform data model is used within a given operating system application interface.[8]
+
+In practice, char is usually 8 bits in size and short is usually 16 bits in size (as are their unsigned counterparts). This holds true for platforms as diverse as 1990s SunOS 4 Unix, Microsoft MS-DOS, modern Linux, and Microchip MCC18 for embedded 8-bit PIC microcontrollers. POSIX requires char to be exactly 8 bits in size.
+
+Various rules in the C standard make unsigned char the basic type used for arrays suitable to store arbitrary non-bit-field objects: its lack of padding bits and trap representations, the definition of object representation,[6] and the possibility of aliasing.[9]
+
+The actual size and behavior of floating-point types also vary by implementation. The only guarantee is that long double is not smaller than double, which is not smaller than float. Usually, the 32-bit and 64-bit IEEE 754 binary floating-point formats are used.
+
+The C99 standard includes new real floating-point types float_t and double_t, defined in <math.h>. They correspond to the types used for the intermediate results of floating-point expressions when FLT_EVAL_METHOD is 0, 1, or 2. These types may be wider than long double.
+
+C99 also added complex types: float _Complex, double _Complex, long double _Complex.
